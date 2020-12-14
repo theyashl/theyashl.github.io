@@ -1,0 +1,222 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies website</title>
+
+   
+    <!--Fav icon-->
+    <link rel="shortcut icon" href="images/favicon.png"/>
+    <!-- using font awsome-->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <style>
+        body{
+    margin:0px;
+    padding: 0px;
+    font-family: poppins;
+    background-color: rgba(151,151,151,0.03);
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    border:1px solid rgba(0,0,0,0.04);
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.logo img{
+    height: 35px;
+}
+nav .menu{
+    display: flex;
+}
+nav .menu li a{
+    height: 40px;
+    line-height: 43px;
+    margin: 0px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:#585858;
+    letter-spacing: 1px;
+}
+.search{
+    width:250px;
+    height: 40px;
+    background-color: rgba(245,245,245,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+.search input{
+    width:100%;
+    height: 30px;
+    border:none;
+    outline: none;
+    background-color: transparent;
+}
+.search i{
+    color:#3a3a3a;
+}
+nav .menu li a:hover{
+    background-color: #242424;
+    color:#ffffff;
+    box-shadow: 5px 10px 30px rgba(53,53,53,0.1);
+    transition: all ease 0.2s;
+}
+#main{
+    padding-top: 80px;
+    background-color: #ffffff;
+}
+.showcase-box{
+    width:300px;
+    height: 400px;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:0px 20px 10px 20px;
+    overflow: hidden;
+}
+.showcase-box img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cs-hidden{
+    overflow: visible !important;
+}
+.h{
+
+    margin-left: 30%;
+    margin-top:-20% ;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
+.checked{
+    color:orange;
+
+}
+.rating1
+{
+    margin-left: 30%;
+    margin-top:-0.5% ;  
+}
+    </style>
+<body>
+
+
+
+
+<!--navigation-------------->
+<nav>
+    <!--logo--------------->
+    <a href="#" class="logo">
+        <img src="images/logo.jpg"/>
+    </a>
+    <!--menu--btn----------------->
+    <input type="checkbox" class="menu-btn" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+    </label>
+    <!--menu-------------->
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Movies</a></li>
+       
+    </ul>
+    <!--search------------->
+    <div class="search">
+        <input type="text" placeholder="Find Your Favourtie Movies"/>
+        <!--search-icon----------->
+        <i class="fas fa-search"></i>
+    </div>
+</nav>
+     <!--box-1--------------------------->
+    <li class="item-a">
+        <!--showcase-box------------------->
+       <div class="showcase-box">
+           <img src="images/l-2.jpg"/>
+       </div>
+           </li>
+        
+    
+    
+
+<section id="heading">
+    <div class="h">
+        <h1>Fantastic BEASTS</h1>
+        <h2> Action | Horror | War</h2>
+        <h3>Have you watch?</h3>
+        
+    </div>
+    </section>
+<div class="rating1">
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick=""starmark(this) id="1one" style="font-size:40px;cursor:pointer;" ></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick=""starmark(this) id="2one" style="font-size:40px;cursor:pointer;" ></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick=""starmark(this) id="3one" style="font-size:40px;cursor:pointer;" ></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick=""starmark(this) id="4one" style="font-size:40px;cursor:pointer;" ></span>
+    <span class="fa fa-star checked" onmouseover="starmark(this)" onclick=""starmark(this) id="5one" style="font-size:40px;cursor:pointer;" ></span>
+
+<textarea class="form-control" rows="3" placeholder="Enter your comment"></textarea>
+<button style="margin-top:10px;margin-left:5px;" onclick="showRating()" class="btn btn-lg btn-success">Submit</button>
+
+</div>
+     </body>
+     <script type="text/javascript">
+        var rating="";
+
+function starmark(item)
+{
+var count=item.id[0];
+rating=count;
+var subid=item.id.substring(1);
+for(var i=0;i<5;i++)
+{
+if(i<count)
+{
+document.getElementById((i+1)+subid).style.color="orange";
+}
+else
+{
+document.getElementById((i+1)+subid).style.color="black";
+}
+
+
+}
+
+}
+
+function showRating()
+{
+
+alert(rating);
+}
+
+    </script>
+     </html>
